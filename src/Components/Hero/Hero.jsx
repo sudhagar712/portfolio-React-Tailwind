@@ -121,7 +121,7 @@ const Hero = ({ theme }) => {
               download
               className={`rounded-full shadow-xxl p-4  text-sm  mb-10 ${theme === "dark" ? "bg-white border-2 text-black border-cyan-400 " : "bg-stone-100 text-black border-2 border-cyan-400"}`}
             >
-              Download CV
+              Download Resume
             </motion.a>
              <motion.a
               onClick={scrollToContact} 
