@@ -17,12 +17,13 @@ export const EXPERIENCES = [
     company: "Pixalive Technology Service Private limited at Bangalore",
     description: `Led a team in developing and maintaining web applications using JavaScript, React.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
     technologies: [
-      "Javascript",
+     
       "React.js",
       "Tailwind",
       "Bootstrap",
-      "Express",
-      "mongoDB",
+      "ReduxToolKit",
+      "Axios"
+     
     ],
   },
   {
@@ -31,12 +32,13 @@ export const EXPERIENCES = [
     company: "TripAlive.me Technology private limited Bangalore",
     description: `Designed and developed user interfaces for web applications using  React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
     technologies: [
-      "Javascript",
+    
       "React.js",
       "Tailwind",
       "Bootstrap",
-      "Express",
-      "mongoDB",
+       "ReduxToolKit",
+      "Axios"
+     
     ],
   },
 ];

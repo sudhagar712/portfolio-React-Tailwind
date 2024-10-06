@@ -36,12 +36,7 @@ const ChildVariants = {
 
 
 
-const scrollToContact = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+
 
 
 
@@ -109,11 +104,11 @@ const Hero = ({ theme }) => {
             </motion.span>
             <motion.p
               variants={ChildVariants}
-              className={`my-2  py-6 text-sm lg:text-medium leading-relaxed  tracking-tighter ${theme === "dark" ? "text-white" : "text-stone-500"}`}
+              className={`my-2   py-6 text-sm lg:text-medium leading-relaxed  tracking-tighter ${theme === "dark" ? "text-white" : "text-stone-500"}`}
             >
               {HERO_CONTENT}
             </motion.p>
-            <span>
+           
             <motion.a
               variants={ChildVariants}
               href="/SudhagarM_Resume.pdf"
@@ -123,14 +118,8 @@ const Hero = ({ theme }) => {
             >
               Download Resume
             </motion.a>
-             <motion.a
-              onClick={scrollToContact} 
-              variants={ChildVariants}
-              className={`rounded-full cursor-pointer shadow-xxl p-4 px-8 text-sm mx-3  mb-10 ${theme === "dark" ? "bg-white border-2 text-black border-cyan-400 " : "bg-stone-100 text-black border-2 border-cyan-400"}`}
-            >
-              Let's Talk
-            </motion.a>
-            </span>
+             
+          
           </motion.div>
         </div>
       </div>

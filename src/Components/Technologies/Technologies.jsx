@@ -41,7 +41,7 @@ const Technologies = ({theme}) => {
       initial= {{opacity:0 ,y:-100}}
       transition= {{duration:1.5}}
       
-      className={`my-10 text-center text-4xl  font-extrabold ${theme === "dark" ? "text-cyan-400" : "text-black"} `}>Technologies</motion.h2>
+      className={`my-10 text-center text-4xl  font-extrabold ${theme === "dark" ? "text-stone-500" : "text-stone-400"} `}>Technologies</motion.h2>
       <motion.div
        whileInView={{opacity: 1 , x:0}}
       initial= {{opacity:0 ,x:-100}}

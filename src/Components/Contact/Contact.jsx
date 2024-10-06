@@ -69,11 +69,11 @@ const Contact = ({ theme }) => {
     <>
       <section id="contact">
         <div className="border-t border-stone-900 pb-20">
-          <h2 className={`my-10 text-center text-4xl lg:text-6xl font-extrabold ${ theme === "dark" ? "text-white" : "text-stone-400"} `}>Get in Touch</h2>
+          <h2 className={`my-10 text-center text-4xl lg:text-6xl font-extrabold ${theme === "dark" ? "text-white" : "text-stone-400"} `}>Get in Touch</h2>
           <div className="text-center tracking-tighter">
-            <p className="my-4 text-3xl lg:text-5xl font-dancing text-cyan-400 font-extrabold ">{CONTACT.Location}</p>
-            <p className="my-4 text-xl lg:text-3xl font-dancing text-cyan-400 font-extrabold ">{CONTACT.phoneNo}</p>
-            <a className="my-4 text-3xl lg:text-3xl font-dancing text-cyan-400 font-extrabold " href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+            <p className={`my-4 text-xl lg:text-xl font-extrabold ${theme === "dark" ? "text-stone-400" : "text-stone-400"}`}>{CONTACT.Location}</p>
+             <p className={`my-4 text-xl lg:text-xl font-extrabold ${theme === "dark" ? "text-stone-400" : "text-stone-400"}`}>{CONTACT.phoneNo}</p>
+           <a className={`my-4 text-xl lg:text-xl font-extrabold ${theme === "dark" ? "text-stone-400" : "text-stone-400"}`} href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
 
             <div className="flex justify-center min-h-screen">
               <form
@@ -81,7 +81,7 @@ const Contact = ({ theme }) => {
                 onSubmit={handleSubmit}
                 className="w-full lg:w-3/4 p-8 mt-10"
               >
-                <h2 className="text-3xl font-bold text-center mb-6 text-cyan-400">Contact Me</h2>
+                <h2 className={`text-3xl lg:text-5xl font-bold text-center mb-6 ${theme === "dark" ? "text-stone-400":"text-dark"}`}>Contact Me</h2>
 
                 <div className="mb-4">
                   <input
@@ -92,7 +92,7 @@ const Contact = ({ theme }) => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className={`w-full px-4 p-10 py-5 outline-0 border-2 border-cyan-400 rounded-full ${theme === "dark" ? "bg-white text-cyan-400" : "bg-stone-200 text-black"}`}
+                     className={`w-full px-5 p-3  outline-0   ${theme === "dark" ? "bg-white text-cyan-400" : "bg-stone-200 text-black"}`}
                   />
                 </div>
 
@@ -105,7 +105,7 @@ const Contact = ({ theme }) => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className={`w-full px-4 p-10 py-5 outline-0 border-2 border-cyan-400 rounded-full ${theme === "dark" ? "bg-white text-cyan-400" : "bg-stone-200 text-black"}`}
+                     className={`w-full px-5 p-3  outline-0   ${theme === "dark" ? "bg-white text-cyan-400" : "bg-stone-200 text-black"}`}
                   />
                 </div>
 
@@ -118,7 +118,7 @@ const Contact = ({ theme }) => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className={`w-full px-4 p-10 py-5 outline-0 border-2 border-cyan-400 rounded-full ${theme === "dark" ? "bg-white text-cyan-400" : "bg-stone-200 text-black"}`}
+                     className={`w-full px-5 p-3  outline-0   ${theme === "dark" ? "bg-white text-cyan-400" : "bg-stone-200 text-black"}`}
                   />
                 </div>
 
@@ -130,7 +130,7 @@ const Contact = ({ theme }) => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className={`w-full px-10 p-10 py-5 outline-0 border-2 border-cyan-400 rounded-full ${theme === "dark" ? "bg-white text-cyan-400" : "bg-stone-200 text-black"}`}
+                    className={`w-full px-5 p-3  outline-0   ${theme === "dark" ? "bg-white text-cyan-400" : "bg-stone-200 text-black"}`}
                     rows="5"
                   />
                 </div>

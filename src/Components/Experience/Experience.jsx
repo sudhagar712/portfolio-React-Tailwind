@@ -10,7 +10,7 @@ const Experience = ({theme}) => {
         whileInView={{opacity:1, y:0}}
         initial={{opacity:0 , y:-100}}
         transition={{duration:0.5 }}
-       className={`my-10 text-center text-4xl  font-extrabold ${theme === "dark" ? "text-cyan-400" : "text-black"} `}>Experience</motion.h2>
+      className={`my-10 text-center text-4xl  font-extrabold ${theme === "dark" ? "text-stone-500" : "text-stone-400"} `}>Experience</motion.h2>
       <div>
         {EXPERIENCES.map((experience, index) => (
           <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
@@ -36,7 +36,7 @@ const Experience = ({theme}) => {
               {experience.technologies.map((tech, index) => (
                 <span
                   key={index}
-                  className="mr-2 mt-4 rounded bg-stone-900 px-2 py-1 text-sm font-medium text-stone-300 "
+                  className="mr-2 mt-4 rounded bg-stone-900 px-2 py-1 text-sm font-medium text-stone-300  "
                 >
                   {tech}
                 </span>
