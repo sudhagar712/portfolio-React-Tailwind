@@ -10,15 +10,20 @@ import Contact from "./Components/Contact/Contact";
 import { motion } from "framer-motion";
 
 const App = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
 
-  useEffect(() => {
+ useEffect(() => {
     if (theme === "dark") {
       document.body.classList.add("dark");
     } else {
       document.body.classList.remove("dark");
     }
+    localStorage.setItem("theme", theme);
   }, [theme]);
+
+  
 
   const handleSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
