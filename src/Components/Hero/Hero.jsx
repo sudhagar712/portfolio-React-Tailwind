@@ -1,5 +1,6 @@
 import React from "react";
-import profilepic from "../../assets/projects/sudhagar_profile.png";
+import profilePicDark from "../../assets/projects/sudhagar_profile.png";
+import profilePicLight from "../../assets/projects/lightmodeprofile.png";
 import { TypeAnimation } from 'react-type-animation';
 import { MdWavingHand } from "react-icons/md"; 
 import { HERO_CONTENT } from "../../constants";
@@ -32,22 +33,41 @@ const ChildVariants = {
   }
 };
 
-const Hero = () => {
+
+
+
+const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+
+
+
+
+
+
+const Hero = ({ theme }) => {
   return (
     <div className="pb-4 ">
       <div className="flex flex-wrap lg:flex-row-reverse">
         <div className="w-full lg:w-1/2">
           <div className="flex justify-center lg:p-8">
+           
             <motion.img
-              src={profilepic}
+              src={theme === "dark" ? profilePicDark : profilePicLight}
               alt="Profile Picture"
-              width={650}
-              height={650}
+             
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 1.5 }}
-              className="border-stone-900 rounded-3xl shadow-lg brightness-125 contrast-125"
+              className={ ` w-64 h-64 lg:w-96 lg:h-96 border-stone-900  rounded-full shadow-lg contrast-125 ${
+                theme === "dark" ? "brightness-125" : "brightness-90"
+              }`}
             />
+          
           </div>
         </div>
         <div className="w-full lg:w-1/2">
@@ -57,14 +77,15 @@ const Hero = () => {
             variants={ContainerVariants}
             className="flex flex-col items-center lg:items-start mt-10"
           >
-            <h3 className="text-2xl lg:text-3xl mb-3">
-              Hello, I'm <MdWavingHand className="inline-block handicons text-yellow-500 animate-wave" />
+            <h3 className={`text-2xl lg:text-3xl mb-3  ${theme === "dark" ? "text-stone-400" : "text-black"}`}>
+              Hello, I'm
+              <MdWavingHand className="inline-block handicons  animate-wave" />
             </h3>
             <motion.h2
               variants={ChildVariants}
-              className="pb-2 text-4xl lg:text-8xl font-bold tracking-tighter mb-3"
+              className={`pb-2 text-4xl lg:text-8xl font-bold tracking-tighter ${theme === "dark" ? "text-stone-400" : "text-black" } mb-3`}
             >
-              Sudhagar M
+              Sudhagar <span className="text-cyan-400">M</span> 
             </motion.h2>
             <motion.span
               variants={ChildVariants}
@@ -72,35 +93,44 @@ const Hero = () => {
             >
               <TypeAnimation
                 sequence={[
-                  'Web Developer </>',
+                  "Web Developer </>",
                   1000,
-                  'ReactJs Developer',
+                  "ReactJs Developer",
                   1000,
-                  'FrontEnd Developer',
+                  "FrontEnd Developer",
                   1000,
-                  'Designer',
-                  1000
+                  "Designer",
+                  1000,
                 ]}
                 wrapper="span"
                 speed={50}
                 repeat={Infinity}
               />
             </motion.span>
-            <motion.p 
+            <motion.p
               variants={ChildVariants}
-              className="my-2 max-w-lg py-6 text-xl leading-relaxed tracking-tighter"
+              className={`my-2  py-6 text-sm lg:text-medium leading-relaxed  tracking-tighter ${theme === "dark" ? "text-white" : "text-stone-500"}`}
             >
               {HERO_CONTENT}
             </motion.p>
+            <span>
             <motion.a
               variants={ChildVariants}
-              href="/SudhagarM_Resume.pdf"  
-              target="_blank" 
-              download 
-              className="bg-white rounded-full p-4 text-sm text-stone-800 mb-10"
+              href="/SudhagarM_Resume.pdf"
+              target="_blank"
+              download
+              className={`rounded-full shadow-xxl p-4  text-sm  mb-10 ${theme === "dark" ? "bg-white border-2 text-black border-cyan-400 " : "bg-stone-100 text-black border-2 border-cyan-400"}`}
             >
-              Download Resume
+              Download CV
             </motion.a>
+             <motion.a
+              onClick={scrollToContact} 
+              variants={ChildVariants}
+              className={`rounded-full cursor-pointer shadow-xxl p-4 px-8 text-sm mx-3  mb-10 ${theme === "dark" ? "bg-white border-2 text-black border-cyan-400 " : "bg-stone-100 text-black border-2 border-cyan-400"}`}
+            >
+              Let's Talk
+            </motion.a>
+            </span>
           </motion.div>
         </div>
       </div>
