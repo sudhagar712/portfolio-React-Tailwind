@@ -52,16 +52,16 @@ const App = () => {
             theme === "dark" ? "bg-white text-black" : "bg-white text-black"
           } px-4 py-4 border-2 border-cyan-500   mb-4 rounded-full absolute top-25 z-10 right-[70px] lg:right-[240px] lg:top-[205px]`}
           initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 1.5 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
         >
           {theme === "dark" ? <CiLight /> : <MdDarkMode />}
         </motion.button>
         <Hero theme={theme} />
-        <Technologies />
-        <Project />
-        <Experience />
-        <Contact />
+        <Technologies theme={theme} />
+        <Project theme={theme} />
+        <Experience theme={theme} />
+        <Contact theme={theme} />
       </div>
     </div>
   );
