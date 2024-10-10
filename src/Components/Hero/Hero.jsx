@@ -1,5 +1,5 @@
 import React from "react";
-import profilePicDark from "../../assets/projects/sudhagar_profile.png";
+import profilePicDark from "../../assets/projects/Myprofileblackmode.png";
 import profilePicLight from "../../assets/projects/lightmodeprofile.png";
 import { TypeAnimation } from 'react-type-animation';
 import { MdWavingHand } from "react-icons/md"; 
@@ -59,7 +59,7 @@ const Hero = ({ theme }) => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 1.5 }}
               className={ ` w-64 h-64 lg:w-96 lg:h-96 border-stone-900  rounded-full shadow-lg contrast-125 ${
-                theme === "dark" ? "brightness-125" : "brightness-90"
+                theme === "dark" ? "brightness-90" : "brightness-90"
               }`}
             />
           
@@ -74,13 +74,15 @@ const Hero = ({ theme }) => {
           >
             <h3 className={`text-2xl lg:text-3xl mb-3  ${theme === "dark" ? "text-stone-400" : "text-black"}`}>
               Hello, I'm
-              <MdWavingHand className="inline-block handicons  animate-wave" />
+              <MdWavingHand className="inline-block handicons dark:text-yellow-400 animate-wave " />
             </h3>
             <motion.h2
               variants={ChildVariants}
               className={`pb-2 text-4xl lg:text-8xl font-bold tracking-tighter ${theme === "dark" ? "text-stone-400" : "text-black" } mb-3`}
             >
-              Sudhagar <span className="text-cyan-400">M</span> 
+              Sudhagar <span className={`${
+            theme === "dark" ? "text-[#fcea4c]" : "text-cyan-400"
+          }`}>M</span> 
             </motion.h2>
             <motion.span
               variants={ChildVariants}
@@ -114,7 +116,7 @@ const Hero = ({ theme }) => {
               href="/SudhagarM_Resume.pdf"
               target="_blank"
               download
-              className={`rounded-full shadow-xxl p-4  text-sm  mb-10 ${theme === "dark" ? "bg-white border-2 text-black border-cyan-400 " : "bg-stone-100 text-black border-2 border-cyan-400"}`}
+              className={`rounded-full shadow-xxl p-4  text-sm  mb-10 ${theme === "dark" ? "bg-white border-2 text-black border-[#fcea4c] " : "bg-stone-100 text-black border-2 border-cyan-400"}`}
             >
               Download Resume
             </motion.a>
