@@ -81,13 +81,13 @@ const App = () => {
             <motion.button
               onClick={handleSwitch}
               className={`${
-                theme === "dark" ? "bg-white text-black" : "bg-white text-black"
-              } px-4 py-4 border-2 border-cyan-500   mb-4 rounded-full absolute top-25 z-10 right-[70px] lg:right-[240px] lg:top-[205px]`}
+                theme === "dark" ? "bg-white text-black border-2 border-[#fcea4c] text-2xl " : "bg-white text-black border-2 border-cyan-500 text-2xl"
+              } px-4 py-4    mb-4 rounded-full absolute top-25 z-10 right-[70px] lg:right-[240px] lg:top-[205px]`}
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 1.5 }}
             >
-              {theme === "dark" ? <CiLight /> : <MdDarkMode />}
+              {theme === "dark" ? <CiLight /> : <MdDarkMode  />}
             </motion.button>
             <Hero theme={theme} />
             <Technologies theme={theme} />

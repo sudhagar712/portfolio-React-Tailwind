@@ -61,3 +61,18 @@
     width: 100%;
   }
 }
+
+
+
+.circlerotation {
+  animation: rotate 4s linear infinite; /* Infinite rotation */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); /* Start at 0 degrees */
+  }
+  100% {
+    transform: rotate(10deg); /* Full circle rotation */
+  }
+}
