@@ -50,13 +50,13 @@ const App = () => {
       {loading ? (
         <div className="flex justify-center items-center h-screen relative">
           {/* Radial gradient background */}
-          <div className="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"></div>
+          <div className="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.40)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"></div>
 
           {/* Grid background wallpaper */}
-          <div className="absolute inset-0 -z-10 h-full w-full bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
+          <div className="absolute inset-0 -z-10 h-full w-full bg-gray-300 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
 
           {/* Loading spinner */}
-          <span className="loader">Loading....</span>
+          <span className="loader">Loading..</span>
         </div>
       ) : (
         <div className="overflow-x-hidden text-stone-300 antialiased">

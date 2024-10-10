@@ -37,12 +37,12 @@
 
 
 .loader {
-  font-size: 50px;
+  font-size: 40px;
   display: inline-block;
-  font-family: "Dancing Script", cursive;
+  
   font-weight: bold;
   color: 00000; 
-  letter-spacing: 10px;
+  letter-spacing: 5px;
   position: relative;
 }
 .loader::after {
