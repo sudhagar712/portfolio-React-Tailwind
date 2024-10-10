@@ -43,6 +43,48 @@ export const EXPERIENCES = [
   },
 ];
 
+
+
+export const EDUCATION = [
+  {
+    year: "2019 - 2021",
+    Graduate: "Post-Graduate - MBA",
+    University: "Director of Distance Education Pondicherry University ",
+   
+  },
+  {
+    year: "2014 - 2018",
+    Graduate: "Under-Graduate - BTECH",
+    University: "Manakula vinayagar insitute of Technology ",
+  
+  },
+  {
+    year: "2013 - 2014",
+    Graduate: "High Secondary School ",
+    University: "Alpha Matric Higher sec school ",
+   
+  },
+   {
+    year: "2011 - 2012",
+    Graduate: "SSLC ",
+    University: "Sri Sanakar Vidyalaya Matriculation Higher Sec school",
+   
+  },
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const PROJECTS = [
   {
     title: "E-Commerce Website",
@@ -75,7 +117,7 @@ export const PROJECTS = [
 ];
 
 export const CONTACT = {
-  Location:"Banglore",
-  phoneNo: "9943863916",
+  Location:"Bangalore, ElectroniCity Phase2",
+  phoneNo: "9943863916 ",
   email: "sudhagarmsr712@gmail.com",
 };

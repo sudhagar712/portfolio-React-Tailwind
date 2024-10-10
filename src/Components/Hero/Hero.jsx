@@ -5,6 +5,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { MdWavingHand } from "react-icons/md"; 
 import { HERO_CONTENT } from "../../constants";
 import { motion } from "framer-motion";
+import { Link } from 'react-scroll';
 
 const ContainerVariants = {
   hidden: {
@@ -34,39 +35,29 @@ const ChildVariants = {
 };
 
 
-
-
-
-
-
-
-
-
-
-
 const Hero = ({ theme }) => {
   return (
     <div className="pb-4 ">
       <div className="flex flex-wrap lg:flex-row-reverse">
         <div className="w-full lg:w-1/2">
           <div className="flex justify-center lg:p-8">
-          <motion.div initial={{ x: 100, opacity: 0 }}
-    animate={{ x: 0, opacity: 1 }}
-    transition={{ duration: 1, delay: 1.5 }} className="w-70 h-70 lg:w-150 lg:h-150 border-4  rounded-full shadow-lg circlerotation">
-  <motion.img
-    src={theme === "dark" ? profilePicDark : profilePicLight}
-    alt="Profile Picture"
-    initial={{ x: 100, opacity: 0 }}
-    animate={{ x: 0, opacity: 1 }}
-    transition={{ duration: 1, delay: 1.5 }}
-    className={`w-64 h-64 lg:w-96 lg:h-96 border-stone-900 rounded-full shadow-lg contrast-125 ${
-      theme === "dark" ? "brightness-90" : "brightness-90"
-    }`}
-  />
-</motion.div>
-
-            
-          
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 1.5 }}
+              className="w-70 h-70 lg:w-150 lg:h-150 border-4  rounded-full shadow-lg circlerotation"
+            >
+              <motion.img
+                src={theme === "dark" ? profilePicDark : profilePicLight}
+                alt="Profile Picture"
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 1.5 }}
+                className={`w-64 h-64 lg:w-96 lg:h-96 border-stone-900 rounded-full shadow-lg contrast-125 ${
+                  theme === "dark" ? "brightness-90" : "brightness-90"
+                }`}
+              />
+            </motion.div>
           </div>
         </div>
         <div className="w-full lg:w-1/2">
@@ -76,17 +67,28 @@ const Hero = ({ theme }) => {
             variants={ContainerVariants}
             className="flex flex-col items-center lg:items-start mt-10"
           >
-            <h3 className={`text-2xl lg:text-3xl mb-3  ${theme === "dark" ? "text-stone-400" : "text-black"}`}>
+            <h3
+              className={`text-2xl lg:text-3xl mb-3  ${
+                theme === "dark" ? "text-stone-400" : "text-black"
+              }`}
+            >
               Hello, I'm
               <MdWavingHand className="inline-block handicons dark:text-yellow-400 animate-wave " />
             </h3>
             <motion.h2
               variants={ChildVariants}
-              className={`pb-2 text-4xl lg:text-8xl font-bold tracking-tighter ${theme === "dark" ? "text-stone-400" : "text-black" } mb-3`}
+              className={`pb-2 text-4xl lg:text-8xl font-bold tracking-tighter ${
+                theme === "dark" ? "text-stone-400" : "text-black"
+              } mb-3`}
             >
-              Sudhagar <span className={`${
-            theme === "dark" ? "text-[#fcea4c]" : "text-cyan-400"
-          }`}>M</span> 
+              Sudhagar{" "}
+              <span
+                className={`${
+                  theme === "dark" ? "text-[#fcea4c]" : "text-cyan-400"
+                }`}
+              >
+                M
+              </span>
             </motion.h2>
             <motion.span
               variants={ChildVariants}
@@ -108,24 +110,64 @@ const Hero = ({ theme }) => {
                 repeat={Infinity}
               />
             </motion.span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
             <motion.p
               variants={ChildVariants}
-              className={`my-2   py-6 text-sm lg:text-medium leading-relaxed  tracking-tighter ${theme === "dark" ? "text-white" : "text-stone-500"}`}
+              className={`my-2   py-6 text-sm lg:text-medium leading-relaxed  tracking-tighter ${
+                theme === "dark" ? "text-white" : "text-stone-500"
+              }`}
             >
               {HERO_CONTENT}
             </motion.p>
-           
-            <motion.a
-              variants={ChildVariants}
-              href="/SudhagarM_Resume.pdf"
-              target="_blank"
-              download
-              className={`rounded-full shadow-xxl p-4  text-sm  mb-10 ${theme === "dark" ? "bg-white border-2 text-black border-[#fcea4c] " : "bg-stone-100 text-black border-2 border-cyan-400"}`}
-            >
-              Download Resume
-            </motion.a>
-             
-          
+
+            <div className="flex  gap-2">
+              <motion.a
+                variants={ChildVariants}
+                href="/SudhagarM_Resume.pdf"
+                target="_blank"
+                download
+                className={`rounded shadow-xl p-4 font-extrabold text-sm  mb-10 ${
+                  theme === "dark"
+                    ? "bg-[#fcea4c] border-2 text-black border-[#fcea4c]   "
+                    : "bg-cyan-400 text-white border-2 border-cyan-400 "
+                }`}
+              >
+                Download CV
+              </motion.a>
+              <motion.div
+                variants={ChildVariants}
+                className={`rounded shadow-xl p-4 font-extrabold text-sm mb-10 ${
+                  theme === "dark"
+                    ? "bg-white border-2 text-black border-[#fcea4c]"
+                    : "bg-black text-white border-2 border-cyan-400"
+                }`}
+              >
+                <Link
+                  to="contact" // ID of the contact component
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer"
+                >
+                  Let's Connect
+                </Link>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>

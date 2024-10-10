@@ -9,6 +9,7 @@ import Experience from "./Components/Experience/Experience";
 import Contact from "./Components/Contact/Contact";
 import { motion } from "framer-motion";
 import HashLoader from "react-spinners/HashLoader";
+import Education from "./Components/Education/Education";
 
 
 const App = () => {
@@ -47,20 +48,16 @@ const App = () => {
   return (
     <>
       {loading ? (
-        
         <div className="flex justify-center items-center h-screen relative">
-      {/* Radial gradient background */}
-      <div className="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"></div>
+          {/* Radial gradient background */}
+          <div className="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"></div>
 
-      {/* Grid background wallpaper */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
+          {/* Grid background wallpaper */}
+          <div className="absolute inset-0 -z-10 h-full w-full bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
 
-      {/* Loading spinner */}
-      <span className="loader">Loading....</span>
-    </div>
-
-        
-       
+          {/* Loading spinner */}
+          <span className="loader">Loading....</span>
+        </div>
       ) : (
         <div className="overflow-x-hidden text-stone-300 antialiased">
           <div className="fixed inset-0 -z-10">
@@ -76,23 +73,26 @@ const App = () => {
             )}
           </div>
 
-          <div className="container mx-auto px-7">
+          <div className="container mx-auto px-7 ">
             <Navabar theme={theme} />
             <motion.button
               onClick={handleSwitch}
               className={`${
-                theme === "dark" ? "bg-white text-black border-2 border-[#fcea4c] text-2xl " : "bg-white text-black border-2 border-cyan-500 text-2xl"
+                theme === "dark"
+                  ? "bg-white text-black border-2 border-[#fcea4c] text-2xl "
+                  : "bg-white text-black border-2 border-cyan-500 text-2xl"
               } px-4 py-4    mb-4 rounded-full absolute top-25 z-10 right-[70px] lg:right-[240px] lg:top-[205px]`}
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 1.5 }}
             >
-              {theme === "dark" ? <CiLight /> : <MdDarkMode  />}
+              {theme === "dark" ? <CiLight /> : <MdDarkMode />}
             </motion.button>
             <Hero theme={theme} />
             <Technologies theme={theme} />
             <Project theme={theme} />
             <Experience theme={theme} />
+            <Education theme={theme} />
             <Contact theme={theme} />
           </div>
         </div>

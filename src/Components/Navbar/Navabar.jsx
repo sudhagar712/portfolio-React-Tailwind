@@ -12,7 +12,7 @@ const Navabar = ({theme}) => {
           <h1
             className={`${
               theme === "dark" ? " text-white" : " text-black"
-            }  text-3xl lg:text-6xl  font-extrabold font-dancing `}
+            }  text-3xl lg:text-7xl  font-extrabold font-dancing `}
           >
           <span className={`${
             theme === "dark" ? "text-[#fcea4c]" : "text-cyan-400"
