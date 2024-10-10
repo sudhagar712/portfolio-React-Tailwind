@@ -76,7 +76,7 @@ const App = () => {
             )}
           </div>
 
-          <div className="container mx-auto mt-3 px-8">
+          <div className="container mx-auto px-7">
             <Navabar theme={theme} />
             <motion.button
               onClick={handleSwitch}
