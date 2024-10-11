@@ -81,7 +81,7 @@ const Contact = ({ theme }) => {
               <form
                 ref={form}
                 onSubmit={handleSubmit}
-                className="w-full  lg:w-3/4  mt-10"
+                className="w-full  lg:w-3/4 "
               >
                 <h2 className={`text-3xl lg:text-5xl  text-center mb-9 ${theme === "dark" ? "text-stone-400":"text-black"}`}>Contact Me</h2>
 
@@ -214,11 +214,7 @@ const Contact = ({ theme }) => {
 
             
             
-            <div className="flex flex-col  lg:flex lg:flex-row justify-center  gap-4">
- <p className={`my-4 text-xl lg:text-xl font-light ${theme === "dark" ? "text-[#fcea4c]" : "text-[#65d0ea]"}`}>{CONTACT.Location} ||</p>
-                      <p className={`my-4 text-xl lg:text-xl font-light ${theme === "dark" ? "text-[#fcea4c]" : "text-[#65d0ea]"}`}>{CONTACT.phoneNo} ||</p>
-                   <a className={`my-4 text-xl lg:text-xl font-light ${theme === "dark" ? "text-[#fcea4c]" : "text-[#65d0ea]"}`} href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
-            </div>
+          
 
 
             

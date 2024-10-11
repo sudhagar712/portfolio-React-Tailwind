@@ -3,12 +3,30 @@ import project2 from "../assets/projects/project-2.webp";
 import project3 from "../assets/projects/project-3.webp";
 import project4 from "../assets/projects/project-4.webp";
 
+
+
+export const HERO1_CONTENT = `I am a Web Developer, Designer and Content Creator. I have rich experience in Frontend and Backend Development.`;
+
+
 export const HERO_CONTENT = `As a front-end developer with nearly two years of experience, I specialize in creating dynamic user interfaces using React.js. I 
 have extensive experience integrating front-end components with back-end services through RESTful operations (GET, POST, 
 UPDATE, DELETE). I am adept at crafting seamless, responsive, and user-friendly web applications, with a strong focus on 
 problem-solving and delivering high-quality, maintainable code. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
 
-export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer with a passion for creating efficient and user-friendly web applications. With 5 years of professional experience, I have worked with a variety of technologies, including React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new technologies, and contributing to open-source projects.`;
+export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer with a passion for creating efficient and user-friendly web applications. With nearly 2 years of professional experience, I have worked with a variety of technologies, including React, Node.js, and MongoDB. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new technologies, and contributing to open-source projects.`;
+
+
+ const status = [
+    { label: "1+ Year's", description: "Experience" },
+    { label: "2 Projects +", description: "Completed" },
+    { label: "AWS, React-Native", description: "Learning" },
+  ];
+
+
+
+
+
+
 
 export const EXPERIENCES = [
   {

@@ -8,8 +8,9 @@ import Project from "./Components/Projectss/Project";
 import Experience from "./Components/Experience/Experience";
 import Contact from "./Components/Contact/Contact";
 import { motion } from "framer-motion";
-import HashLoader from "react-spinners/HashLoader";
 import Education from "./Components/Education/Education";
+import About from "./Components/About/About";
+import NavMiniBar from "./Components/NavMini/NavMiniBar";
 
 
 const App = () => {
@@ -21,7 +22,7 @@ const App = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 1000);
   }, []);
 
 
@@ -73,27 +74,29 @@ const App = () => {
             )}
           </div>
 
-          <div className="container mx-auto px-7 ">
+          <div className="container mx-auto">
             <Navabar theme={theme} />
             <motion.button
               onClick={handleSwitch}
               className={`${
                 theme === "dark"
-                  ? "bg-white text-black border-2 border-[#fcea4c] text-2xl "
-                  : "bg-white text-black border-2 border-cyan-500 text-2xl"
-              } px-4 py-4    mb-4 rounded-full absolute top-25 z-10 right-[70px] lg:right-[240px] lg:top-[205px]`}
+                  ? "bg-[#fcea4c] text-black  text-2xl lg:text-3xl "
+                  : "bg-cyan-400 text-white  text-2xl lg:text-3xl"
+              }  p-3  rounded-full   mb-4  absolute top-5 right-3 z-10 `}
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 1.5 }}
             >
-              {theme === "dark" ? <CiLight /> : <MdDarkMode />}
+              {theme === "dark" ? <div className="text-sm "><CiLight  /></div>  :<div className="text-sm text-center"><MdDarkMode /></div> }
             </motion.button>
             <Hero theme={theme} />
+            <About theme={theme} />
             <Technologies theme={theme} />
             <Project theme={theme} />
             <Experience theme={theme} />
             <Education theme={theme} />
             <Contact theme={theme} />
+            <NavMiniBar/>
           </div>
         </div>
       )}

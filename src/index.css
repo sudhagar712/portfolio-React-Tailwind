@@ -81,3 +81,12 @@
     transform: rotate(10deg); /* Full circle rotation */
   }
 }
+
+
+
+
+
+.active {
+  font-weight: bold;
+  color: #fcea4c; /* Add your active color */
+}
