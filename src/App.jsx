@@ -22,7 +22,7 @@ const App = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 4000);
   }, []);
 
 
@@ -57,7 +57,7 @@ const App = () => {
           <div className="absolute inset-0 -z-10 h-full w-full bg-gray-300 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
 
           {/* Loading spinner */}
-          <span className="loader">Loading..</span>
+          <span className="spinner"></span>
         </div>
       ) : (
         <div className="overflow-x-hidden text-stone-300 antialiased">
@@ -96,7 +96,7 @@ const App = () => {
             <Experience theme={theme} />
             <Education theme={theme} />
             <Contact theme={theme} />
-            <NavMiniBar/>
+            <NavMiniBar theme={theme}/>
           </div>
         </div>
       )}

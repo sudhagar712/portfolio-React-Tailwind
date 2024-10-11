@@ -12,9 +12,9 @@ const NavMiniBar = ({theme}) => {
       <div className="container mx-auto">
         {/* nav inner */}
         <div
-          className="w-full bg-black/40 h-[80px] backdrop-blur-4xl
-      rounded-full max-w-[460px] mx-auto px-5 flex justify-between text-2xl
-       text-white/50   "
+          className={`w-full  
+      rounded-full max-w-[460px] mx-auto px-5 flex justify-between text-2xl h-[80px]
+       text-white/50  ${theme === "dark" ? "bg-white/40 backdrop-blur-4xl ":"bg-black/40  backdrop-blur-4xl"}  `}
         >
           <Link
             to="home"

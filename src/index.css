@@ -36,7 +36,7 @@
 
 
 
-.loader {
+/* .loader {
   font-size: 40px;
   display: inline-block;
   
@@ -66,7 +66,7 @@
     width: 100%;
   }
 }
-
+ */
 
 
 .circlerotation {
@@ -89,4 +89,30 @@
 .active {
   font-weight: bold;
   color: #fcea4c; /* Add your active color */
+}
+
+
+.spinner {
+   width: 56px;
+   height: 56px;
+   animation: spinner-c601d3 1s infinite;
+   background-color: #24d3ee;
+   border-radius: 50%;
+}
+
+@keyframes spinner-c601d3 {
+   0% {
+      opacity: 0;
+      transform: scale(0) translateX(-300%);
+   }
+
+   50% {
+      opacity: 1;
+      transform: scale(1.25) translateX(0);
+   }
+
+   100% {
+      opacity: 0;
+      transform: scale(0) translateX(300%);
+   }
 }

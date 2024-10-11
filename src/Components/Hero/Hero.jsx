@@ -42,7 +42,7 @@ const ChildVariants = {
 const Hero = ({ theme }) => {
   return (
     <section id="home">
-      <div className="pb-4 ">
+      <div className="pb-4 px-8 ">
         <div className="flex flex-wrap lg:flex-row-reverse">
           <div className="w-full lg:w-1/2">
             <div className="flex justify-center lg:p-8">
@@ -50,7 +50,7 @@ const Hero = ({ theme }) => {
                 initial={{ x: 100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 1.5 }}
-                className="w-70 h-70 lg:w-150 lg:h-150 border-4  rounded-full shadow-lg circlerotation"
+                className="w-70 h-70 lg:w-150 lg:h-150 border-1 border-cyan-400 rounded-full shadow-lg circlerotation"
               >
                 <motion.img
                   src={theme === "dark" ? profilePicDark : profilePicLight}
@@ -58,7 +58,7 @@ const Hero = ({ theme }) => {
                   initial={{ x: 100, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 1, delay: 1.5 }}
-                  className={` w-64 h-64 lg:w-96 lg:h-96 border-stone-900 rounded-full shadow-lg contrast-125 ${
+                  className={` w-64 h-64 lg:w-96 lg:h-96 border-stone-900 rounded-full  shadow-lg contrast-125 ${
                     theme === "dark" ? "brightness-90" : "brightness-90"
                   }`}
                 />

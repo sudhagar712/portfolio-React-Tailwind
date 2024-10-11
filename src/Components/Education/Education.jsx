@@ -2,18 +2,54 @@ import React from "react";
 import { EDUCATION } from "../../constants";
 import { motion } from "framer-motion";
 
+
+
+
+const ContainerVariants = {
+     hidden: {
+    opacity: 0, 
+    x: -100 
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.5,
+    }
+  }
+};
+
+const ChildVariants = {
+  hidden: {
+    opacity: 0, 
+    x: -100
+  },
+  visible: {
+    opacity: 1, 
+    x: 0, 
+    transition: { duration: 0.5 }
+  }
+};
+
+
+
+
 const Education = ({ theme }) => {
   return (
-    <div className="pb-4">
+    <div className="pb-4 px-8">
       <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.5 }}
-        className={`my-10 text-center text-4xl lg:text-4xl  font-extrabold ${
-          theme === "dark" ? "text-[#fcea4c]" : "text-[#65d0ea]"
-        } `}
+        variants={ChildVariants}
+        className={`pb-2 text-4xl text-center mb-[39px] lg:text-7xl font-bold tracking-tighter ${
+          theme === "dark" ? "text-stone-400" : "text-black"
+        } mb-3`}
       >
-        Education
+       EDU
+        <span
+          className={`${theme === "dark" ? "text-[#fcea4c]" : "text-cyan-400"}`}
+        >
+          CATION
+        </span>
       </motion.h2>
       <div>
         {EDUCATION.map((education, index) => (

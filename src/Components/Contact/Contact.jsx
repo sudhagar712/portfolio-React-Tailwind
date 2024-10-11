@@ -73,7 +73,7 @@ const Contact = ({ theme }) => {
   return (
     <>
       <section id="contact">
-        <div className="border-t border-stone-900 pb-20">
+        <div className="border-t border-stone-900 pb-20 px-8">
           <h2 className={`my-10 text-center text-4xl lg:text-6xl font-extrabold ${theme === "dark" ? "text-stone-400" : "text-black"} `}>Get in Touch</h2>
           <div className=" tracking-tighter">
             
