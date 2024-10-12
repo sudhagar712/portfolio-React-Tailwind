@@ -17,7 +17,7 @@ const NavMiniBar = ({ theme }) => {
     <div>
     
       <ImMenu
-        className={`absolute top-4 right-20 cursor-pointer text-4xl ${
+        className={`absolute top-5 right-20 cursor-pointer text-4xl ${
           theme === "dark" ? "text-white" : "text-black"
         }`}
         onClick={toggleNav}
