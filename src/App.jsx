@@ -69,7 +69,7 @@ const App = () => {
           </div>
         </>
       ) : (
-        <div className="overflow-x-hidden text-stone-300 antialiased">
+        <div className="overflow-x-hidden text-stone-300 antialiased ">
           <div className="fixed inset-0 -z-10">
             {theme === "light" ? (
               <div className="relative h-full w-full bg-white">
@@ -83,7 +83,7 @@ const App = () => {
             )}
           </div>
 
-          <div className="container mx-auto">
+          <div className="container mx-auto ">
             <Navabar theme={theme} />
             <motion.button
               onClick={handleSwitch}
