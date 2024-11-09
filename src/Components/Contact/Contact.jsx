@@ -83,7 +83,7 @@ const Contact = ({ theme }) => {
                 onSubmit={handleSubmit}
                 className="w-full  lg:w-3/4 "
               >
-                <h2 className={`text-3xl lg:text-5xl  text-center mb-9 ${theme === "dark" ? "text-stone-400":"text-black"}`}>Contact Me</h2>
+                {/* <h2 className={`text-3xl lg:text-5xl  text-center mb-9 ${theme === "dark" ? "text-stone-400":"text-black"}`}>Contact Me</h2> */}
 
                <div className={`grid grid-cols-1 md:grid-cols-2 gap-6  ${theme === "dark" ? "bg-transparent" : "bg-transparent"}`}>
               {/* Left Side - Image */}
