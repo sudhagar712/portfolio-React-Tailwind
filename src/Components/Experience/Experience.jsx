@@ -35,10 +35,10 @@ const ChildVariants = {
 const Experience = ({theme}) => {
   return (
     <section id="work">
-      <div className="pb-4 px-8">
+      <div className="pb-4 px-8 mt-[70px]">
         <motion.h2
           variants={ChildVariants}
-          className={`pb-2 text-4xl text-center mb-[20px] lg:text-7xl font-bold tracking-tighter ${
+          className={`pb-2 text-4xl text-center mb-[70px] lg:text-7xl font-bold tracking-tighter ${
             theme === "dark" ? "text-stone-400" : "text-black"
           } mb-3`}
         >

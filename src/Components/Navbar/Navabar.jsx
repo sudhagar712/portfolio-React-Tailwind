@@ -3,7 +3,7 @@ import React from "react";
 
 const Navabar = ({ theme }) => {
   return (
-    <nav className="flex  items-center py-6">
+    <nav className="flex  items-center py-7 ">
       <div className="flex flex-shrink-0 items-center">
        
         <a href="/">

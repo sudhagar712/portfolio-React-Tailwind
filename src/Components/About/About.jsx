@@ -36,12 +36,6 @@ const ChildVariants = {
 
 
 
-
-
-
-
-
-
 const About = ({ theme }) => {
 
     const stats = [
@@ -54,7 +48,7 @@ const About = ({ theme }) => {
 
   return (
     <section id="about">
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16 py-12 px-8  ">
+      <div className="flex flex-col mt-[50px] md:flex-row items-center md:items-start gap-8 md:gap-16 py-12 px-8  ">
         {/* Image Section */}
         <div className="flex-shrink-0">
           <img

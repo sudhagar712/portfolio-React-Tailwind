@@ -37,7 +37,7 @@ const ChildVariants = {
 
 const Education = ({ theme }) => {
   return (
-    <div className="pb-4 px-8">
+    <div className="pb-4 px-8 mt-[70px]">
       <motion.h2
         variants={ChildVariants}
         className={`pb-2 text-4xl text-center mb-[39px] lg:text-7xl font-bold tracking-tighter ${

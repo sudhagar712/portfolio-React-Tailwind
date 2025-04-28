@@ -54,7 +54,7 @@ const iconVariants = (duration) => ({
 const Technologies = ({ theme }) => {
   return (
     <section id="Skills">
-      <div className="pb-24 pt-10 px-8">
+      <div className="pb-24 pt-10 px-8 mt-[60px]">
         <motion.h2
           variants={ChildVariants}
           className={`pb-2 text-4xl lg:text-7xl text-center font-bold tracking-tighter ${
