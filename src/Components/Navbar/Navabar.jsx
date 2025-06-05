@@ -17,7 +17,7 @@ const Navabar = ({ theme }) => {
               theme === "dark"
                 ? "text-white md:text-yellow-300"
                 : " text-white md:text-[#0bccef]"
-            } text-2xl lg:text-5xl font-bold font-dancing`}
+            } text-xl lg:text-5xl font-bold font-dancing`}
           >
             <span
               className={`mx-3 ${

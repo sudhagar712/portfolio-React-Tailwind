@@ -53,7 +53,7 @@ const Technologies = ({ theme }) => {
 
   return (
     <section id="Skills" className="lg:min-h-screen flex justify-center">
-      <div className=" px-10">
+      <div className=" px-10 mt-10 mb-10">
         <motion.h2
           variants={ChildVariants}
           className={`pb-2 text-4xl lg:text-7xl mb-10 text-center font-bold tracking-tighter ${

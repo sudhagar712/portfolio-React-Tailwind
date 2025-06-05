@@ -84,7 +84,7 @@ const About = ({ theme }) => {
           </h1>
 
           {/* Stats Section */}
-          <div className="mt-8  flex justify-center md:justify-start gap-6">
+          <div className="mt-8  flex justify-center md:justify-start gap-2">
             {stats.map((stat, index) => (
               <div
                 key={index}
@@ -112,7 +112,7 @@ const About = ({ theme }) => {
             ))}
           </div>
           <p
-            className={`mt-6   mb-10 lg:text-md text-xs leading-6  ${
+            className={`mt-6   mb-10 lg:text-md text-[10px] p-3 leading-6  ${
               theme === "dark" ? "text-white" : "text-stone-600"
             }`}
           >
