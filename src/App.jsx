@@ -83,7 +83,7 @@ const App = () => {
             )}
           </div>
 
-          <div className="container mx-auto ">
+          <div className="container  mx-auto ">
             <Navabar theme={theme} />
             <motion.button
               onClick={handleSwitch}
@@ -97,8 +97,8 @@ const App = () => {
               transition={{ duration: 1, delay: 1.5 }}
             >
               {theme === "dark" ? (
-                <div className="text-sm ">
-                  <CiLight />
+                <div className="text-sm  ">
+                  <CiLight className="shadow-lg" />
                 </div>
               ) : (
                 <div className="text-sm text-center">

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ImMenu } from "react-icons/im"; // Import the ImMenu icon
+import { MdMenuOpen } from "react-icons/md";// Import the ImMenu icon
 import { FaHome } from "react-icons/fa";
 import { FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineMessage, MdWork } from "react-icons/md";
@@ -15,8 +15,8 @@ const NavMiniBar = ({ theme }) => {
 
   return (
     <div>
-      <ImMenu
-        className={`absolute top-5 right-20 cursor-pointer text-4xl ${
+      <MdMenuOpen 
+        className={`absolute shadow-xl p-2 rounded-md top-5 right-20 cursor-pointer text-4xl ${
           theme === "dark" ? "text-white" : "text-black"
         }`}
         onClick={toggleNav}
@@ -27,7 +27,7 @@ const NavMiniBar = ({ theme }) => {
         <nav className="fixed bottom-2 lg:bottom-8 w-full overflow-hidden z-50">
           <div className="container mx-auto">
             <div
-              className={`w-full rounded-full max-w-[460px] mx-auto px-5 flex justify-between text-2xl h-[80px] text-white/50 ${
+              className={`w-full rounded-full gap-6 md:max-w-[400px] max-w-[300px] opacity-80 mx-auto px-5 flex justify-between text-2xl h-[80px] text-white/50 ${
                 theme === "dark"
                   ? "bg-yellow-300 rounded-full border-2 border-white backdrop-blur-4xl shadow-xxl"
                   : "bg-cyan-300 border-2 border-white backdrop-blur-4xl shadow-md"
