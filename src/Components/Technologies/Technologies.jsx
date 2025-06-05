@@ -2,38 +2,22 @@ import React from "react";
 import { RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { FaHtml5, FaCss3Alt, FaJsSquare } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io5";
-import { SiExpress, SiMongodb } from "react-icons/si";
+import {
+  SiExpress,
+  SiMongodb,
+  SiRedux,
+  SiTypescript,
+  SiBootstrap
+} from "react-icons/si";
 import { FiFigma } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 
-
-
-
-
-const ContainerVariants = {
-     hidden: {
-    opacity: 0, 
-    x: -100 
-  },
+const ChildVariants = {
+  hidden: { opacity: 0, x: -100 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: {
-      duration: 0.5,
-      staggerChildren: 0.5,
-    }
-  }
-};
-
-const ChildVariants = {
-  hidden: {
-    opacity: 0, 
-    x: -100
-  },
-  visible: {
-    opacity: 1, 
-    x: 0, 
     transition: { duration: 0.5 }
   }
 };
@@ -43,18 +27,33 @@ const iconVariants = (duration) => ({
   animate: {
     y: [10, -10],
     transition: {
-      duration: duration,
+      duration,
       ease: "linear",
       repeat: Infinity,
-      repeatType: "reverse",
-    },
-  },
+      repeatType: "reverse"
+    }
+  }
 });
 
 const Technologies = ({ theme }) => {
+  const iconData = [
+    { icon: <FaHtml5 className="text-orange-600" />, delay: 1.5 },
+    { icon: <FaCss3Alt className="text-blue-600" />, delay: 2.5 },
+    { icon: <FaJsSquare className="text-yellow-500" />, delay: 3 },
+    { icon: <RiReactjsLine className="text-cyan-600" />, delay: 5 },
+    { icon: <RiTailwindCssFill className="text-teal-400" />, delay: 1.5 },
+    { icon: <FiFigma className="text-purple-500" />, delay: 2 },
+    { icon: <IoLogoNodejs className="text-green-600" />, delay: 3 },
+    { icon: <SiExpress className="text-gray-800" />, delay: 5 },
+    { icon: <SiMongodb className="text-green-500" />, delay: 2 },
+    { icon: <SiRedux className="text-purple-600" />, delay: 3 },
+    { icon: <SiTypescript className="text-blue-500" />, delay: 2.5 },
+    { icon: <SiBootstrap className="text-indigo-600" />, delay: 2 }
+  ];
+
   return (
-    <section id="Skills">
-      <div className="pb-24 pt-10 px-8 mt-[60px]">
+    <section id="Skills" className="lg:min-h-screen flex justify-center">
+      <div className=" px-10">
         <motion.h2
           variants={ChildVariants}
           className={`pb-2 text-4xl lg:text-7xl text-center font-bold tracking-tighter ${
@@ -70,75 +69,23 @@ const Technologies = ({ theme }) => {
             SKILLS
           </span>
         </motion.h2>
+
         <motion.div
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 1.5 }}
-          className="  flex flex-wrap mt-10 items-center justify-center gap-8 text-6xl"
+          className="grid grid-cols-3 md:grid-cols-12 gap-8 mt-10 text-6xl md:text-8xl justify-center  items-center"
         >
-          <motion.div
-            initial="initial"
-            animate="animate"
-            variants={iconVariants(1.5)}
-          >
-            <FaHtml5 className="text-orange-600" />
-          </motion.div>
-          <motion.div
-            initial="initial"
-            animate="animate"
-            variants={iconVariants(2.5)}
-          >
-            <FaCss3Alt className="text-blue-600" />
-          </motion.div>
-          <motion.div
-            initial="initial"
-            animate="animate"
-            variants={iconVariants(3)}
-          >
-            <FaJsSquare className="text-yellow-500" />
-          </motion.div>
-          <motion.div
-            initial="initial"
-            animate="animate"
-            variants={iconVariants(5)}
-          >
-            <RiReactjsLine className="text-cyan-600" />
-          </motion.div>
-          <motion.div
-            initial="initial"
-            animate="animate"
-            variants={iconVariants(1.5)}
-          >
-            <RiTailwindCssFill className="text-teal-400" />
-          </motion.div>
-          <motion.div
-            initial="initial"
-            animate="animate"
-            variants={iconVariants(2)}
-          >
-            <FiFigma className="text-purple-500" />
-          </motion.div>
-          <motion.div
-            initial="initial"
-            animate="animate"
-            variants={iconVariants(3)}
-          >
-            <IoLogoNodejs className="text-green-600" />
-          </motion.div>
-          <motion.div
-            initial="initial"
-            animate="animate"
-            variants={iconVariants(5)}
-          >
-            <SiExpress className="text-gray-800" />
-          </motion.div>
-          <motion.div
-            initial="initial"
-            animate="animate"
-            variants={iconVariants(2)}
-          >
-            <SiMongodb className="text-green-500" />
-          </motion.div>
+          {iconData.map((item, index) => (
+            <motion.div
+              key={index}
+              initial="initial"
+              animate="animate"
+              variants={iconVariants(item.delay)}
+            >
+              {item.icon}
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

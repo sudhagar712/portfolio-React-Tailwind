@@ -39,22 +39,22 @@ const ChildVariants = {
 const About = ({ theme }) => {
 
     const stats = [
-  { label: "2 Year's", description: "Experience" },
-  { label: "10+ Projects ", description: "Completed"},
+  { label: "2.6+ Year's", description: "Experience" },
+  { label: "20+ Projects ", description: "Completed"},
   { label: "AWS, React-Native", description: "Learning" },
 ];
 
 
 
   return (
-    <section id="about">
-      <div className="flex flex-col mt-[50px] md:flex-row items-center md:items-start gap-8 md:gap-16 py-12 px-8  ">
+    <section id="about" className="lg:min-h-screen ">
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16  py-12  md:px-[100px] px-1  ">
         {/* Image Section */}
         <div className="flex-shrink-0">
           <img
             src={theme === "dark" ? aboutImg : aboutImglight}
             alt="Profile"
-            className="rounded-lg shadow-lg w-full md:w-[350px] lg:w-[500px]"
+            className="rounded-lg shadow-lg  w-full lg:w-[500px]"
           />
         </div>
 
@@ -62,7 +62,7 @@ const About = ({ theme }) => {
         <div className="max-w-4xl text-center md:text-left">
           <motion.h2
             variants={ChildVariants}
-            className={`pb-2 text-4xl lg:text-7xl font-bold tracking-tighter ${
+            className={`pb-2 text-3xl lg:text-6xl font-bold  ${
               theme === "dark" ? "text-stone-400" : "text-black"
             } mb-3`}
           >
@@ -88,7 +88,7 @@ const About = ({ theme }) => {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className={`flex flex-col text-sm cursor-pointer font-extrabold items-center   rounded-lg p-4  ${
+                className={`flex flex-col text-[10px] md:text-md cursor-pointer font-extrabold items-center   rounded-lg p-4  ${
                   theme === "dark"
                     ? "border-2 border-[#fcea4c] hover:bg-[#fcea4c] hover:text-black"
                     : " border-2 border-cyan-400 hover:bg-cyan-400 hover:text-white"
@@ -112,7 +112,7 @@ const About = ({ theme }) => {
             ))}
           </div>
           <p
-            className={`mt-6  mb-10 lg:text-2xl text-md  font-dancing  leading-8  ${
+            className={`mt-6   mb-10 lg:text-md text-xs leading-6  ${
               theme === "dark" ? "text-white" : "text-stone-600"
             }`}
           >

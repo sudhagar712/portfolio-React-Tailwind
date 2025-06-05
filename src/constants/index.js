@@ -8,7 +8,7 @@ import project4 from "../assets/projects/project-4.webp";
 export const HERO1_CONTENT = `I am a Web Developer, Designer and Content Creator. I have rich experience in Frontend and Backend Development.`;
 
 
-export const HERO_CONTENT = `As a front-end developer with nearly two years of experience, I specialize in creating dynamic user interfaces using React.js. I 
+export const HERO_CONTENT = `As a front-end developer with nearly 2.6 years of experience, I specialize in creating dynamic user interfaces using React.js. I 
 have extensive experience integrating front-end components with back-end services through RESTful operations (GET, POST, 
 UPDATE, DELETE). I am adept at crafting seamless, responsive, and user-friendly web applications, with a strong focus on 
 problem-solving and delivering high-quality, maintainable code. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;

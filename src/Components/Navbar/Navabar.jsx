@@ -14,12 +14,14 @@ const Navabar = ({ theme }) => {
         <a href="/">
           <h1
             className={`${
-              theme === "dark" ? "text-gray-500" : "text-white md:text-black"
+              theme === "dark"
+                ? "text-white md:text-yellow-300"
+                : " text-white md:text-[#0bccef]"
             } text-2xl lg:text-5xl font-bold font-dancing`}
           >
             <span
               className={`mx-3 ${
-                theme === "dark" ? "text-black " : "md:text-[#0bccef] text-black"
+                theme === "dark" ? "md:text-white text-black  " : " md:text-black text-black "
               }`}
             >
               Sudhagar

@@ -34,7 +34,7 @@ const ChildVariants = {
 
 const Experience = ({theme}) => {
   return (
-    <section id="work">
+    <section id="work"  className="lg:min-h-screen">
       <div className="pb-4 px-8 mt-[70px]">
         <motion.h2
           variants={ChildVariants}

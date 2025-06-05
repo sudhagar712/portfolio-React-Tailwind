@@ -41,13 +41,13 @@ const ChildVariants = {
 
 const Hero = ({ theme }) => {
   return (
-    <section id="home  ">
-      <div className="pb- ">
+    <section id="home" className="lg:min-h-screen  flex items-center">
+      <div className="pb-5">
         <div className="flex flex-wrap">
           <div className="w-full  p-10  lg:w-1/2">
             <div className="flex justify-center lg:p-8">
               <div
-                className={`absolute md:hidden  top-0 left-0 w-[100%] h-[25%] md:w-[35%]  md:h-[80%]  ${
+                className={`absolute md:hidden shadow-lg  top-0 left-0 w-[100%] h-[25%] md:w-[35%]  md:h-[80%]  ${
                   theme === "dark" ? "bg-[#fcea4b]" : "bg-cyan-400"
                 } z-0`}
               />
@@ -71,7 +71,7 @@ const Hero = ({ theme }) => {
                   initial={{ x: 100, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 1, delay: 1.5 }}
-                  className={`relative md:p-2  z-10 mt-[-60px] md:mt-[10px] w-[200px] h-[200px] lg:w-[400px] lg:h-[400px] rounded-full shadow-2xl object-fit contrast-125 border-4 ${
+                  className={`relative md:p-2  z-10 mt-[-40px] md:mt-[10px] w-[200px] h-[200px] lg:w-[400px] lg:h-[400px] rounded-full shadow-2xl object-fit contrast-125 border-4 ${
                     theme === "dark" ? "border-yellow-400" : "border-cyan-400"
                   }`}
                 />
@@ -131,7 +131,7 @@ const Hero = ({ theme }) => {
 
               <motion.p
                 variants={ChildVariants}
-                className={` py-8  text-medium lg:text-xl  text-center md:text-left font leading-relaxed  tracking-tighter ${
+                className={` py-8  text-medium lg:text-md  text-center md:text-left font leading-relaxed  tracking-tighter ${
                   theme === "dark"
                     ? "text-white font-light"
                     : "text-stone-500 font-light"
@@ -182,13 +182,13 @@ const Hero = ({ theme }) => {
                 </a>
               </div>
 
-              <div className="flex  gap-2">
+              <div className="flex items-center gap-2">
                 <motion.a
                   variants={ChildVariants}
                   href="/SudhagarM_Resume.pdf"
                   target="_blank"
                   download
-                  className={`rounded shadow-xl p-4 lg:px-10 font-extrabold text-sm  mb-10 ${
+                  className={`rounded shadow-xl p-3 lg:px-10 font-extrabold text-[10px]  mb-10 ${
                     theme === "dark"
                       ? "bg-[#fcea4c] border-2 text-black border-[#fcea4c]   "
                       : "bg-cyan-400 text-white border-2 border-cyan-400 "
@@ -198,7 +198,7 @@ const Hero = ({ theme }) => {
                 </motion.a>
                 <motion.div
                   variants={ChildVariants}
-                  className={`rounded shadow-xl p-4 lg:px-10 font-extrabold text-sm mb-10 ${
+                  className={`rounded shadow-xl p-3 lg:px-10 font-extrabold text-[10px] mb-10 ${
                     theme === "dark"
                       ? "bg-white border-2 text-black border-[#fcea4c]"
                       : "bg-black text-white border-2 border-cyan-400"

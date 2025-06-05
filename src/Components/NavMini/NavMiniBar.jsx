@@ -4,6 +4,7 @@ import { FaHome } from "react-icons/fa";
 import { FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineMessage, MdWork } from "react-icons/md";
 import { BiBookReader } from "react-icons/bi";
+import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { Link } from "react-scroll";
 
 const NavMiniBar = ({ theme }) => {
@@ -15,9 +16,9 @@ const NavMiniBar = ({ theme }) => {
 
   return (
     <div>
-      <MdMenuOpen 
-        className={`absolute shadow-xl p-2 rounded-md top-5 right-20 cursor-pointer text-4xl ${
-          theme === "dark" ? "text-white" : "text-black"
+      <MdMenuOpen
+        className={`absolute shadow-xl p-2 rounded-md top-5  right-20 cursor-pointer text-4xl flex items-center  ${
+          theme === "dark" ? "text-gray-800" : "text-black"
         }`}
         onClick={toggleNav}
       />
@@ -38,7 +39,7 @@ const NavMiniBar = ({ theme }) => {
                 // activeClass="active"
                 smooth={true}
                 spy={true}
-                offset={-200}
+                offset={-400}
                 className={`cursor-pointer w-[60px] h-[50px] mt-[15px] flex items-center justify-center lg:h-[50px] lg:w-[60px] lg:mt-[15px]
                    ${
                      theme === "dark"
@@ -78,6 +79,23 @@ const NavMiniBar = ({ theme }) => {
               >
                 <BiBookReader />
               </Link>
+
+              <Link
+                to="project"
+                activeClass="active"
+                smooth={true}
+                spy={true}
+                offset={-200}
+                className={`cursor-pointer w-[60px] h-[50px] mt-[15px] flex items-center justify-center lg:h-[50px] lg:w-[60px] lg:mt-[15px]
+                   ${
+                     theme === "dark"
+                       ? " shadow-2xl rounded-full  text-black active:text-yellow-500"
+                       : "active:bg-white rounded-full shadow-2xl text-black "
+                   }`}
+              >
+                <AiOutlineFundProjectionScreen />
+              </Link>
+
               <Link
                 to="work"
                 activeClass="active"

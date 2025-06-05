@@ -1,19 +1,48 @@
 import React, { useRef, useState } from "react";
-import contactpic from "../../assets/projects/programer.gif";
 import { FaLinkedin } from "react-icons/fa";
 import { VscGithubInverted } from "react-icons/vsc";
-import { FaInstagram } from "react-icons/fa6";
-import { FaWhatsapp } from "react-icons/fa6";
-import { CONTACT } from '../../constants';
+import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
 import emailjs from "emailjs-com";
+import "react-toastify/dist/ReactToastify.css";
+
+import { motion } from "framer-motion";
+
+const ContainerVariants = {
+  hidden: {
+    opacity: 0,
+    x: -100
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.5
+    }
+  }
+};
+
+const ChildVariants = {
+  hidden: {
+    opacity: 0,
+    x: -100
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5 }
+  }
+};
+
+
+
 
 const Contact = ({ theme }) => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    message: ""
   });
 
   const form = useRef();
@@ -27,10 +56,7 @@ const Contact = ({ theme }) => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     const { name, email, message } = formData;
-
-    // Basic email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!name || !email || !message) {
       toast.error("Please fill in all fields!");
@@ -42,189 +68,143 @@ const Contact = ({ theme }) => {
 
     emailjs
       .sendForm(
-        "service_9dvjwjb",
-        "template_40f6ib9",
+        "service_zhrbu3o",
+        "template_o8nvgf4",
         form.current,
-        "UwNUDfsuW5yjPmOLf"
+        "CtmRn_PKCrIyRhg_o"
       )
       .then(
-        (result) => {
-          console.log(result.text);
+        () => {
           toast.success("Message sent successfully!");
           form.current.reset();
-          setFormData({
-            name: '',
-            email: '',
-            subject: '',
-            message: ''
-          }); // Reset state
+          setFormData({ name: "", email: "", message: "" });
         },
-        (error) => {
-          console.error(error.text);
+        () => {
           toast.error("Failed to send the message, please try again.");
         }
       );
   };
 
-  const handleSubmit = (e) => {
-    sendEmail(e);
-  };
-
   return (
-    <>
-      <section id="contact">
-        <div className="border-t border-stone-900 pb-20 px-8">
-          <h2 className={`my-10 text-center text-4xl lg:text-6xl font-extrabold ${theme === "dark" ? "text-stone-400" : "text-black"} `}>Get in Touch</h2>
-          <div className=" tracking-tighter">
-            
-            <div className="flex justify-center min-h-screen">
-              <form
-                ref={form}
-                onSubmit={handleSubmit}
-                className="w-full  lg:w-3/4 "
-              >
-                {/* <h2 className={`text-3xl lg:text-5xl  text-center mb-9 ${theme === "dark" ? "text-stone-400":"text-black"}`}>Contact Me</h2> */}
+    <section id="contact" className="lg:min-h-screen py-5 p-6 ">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        {/* Left Side */}
+        <div>
+          <motion.h2
+            variants={ChildVariants}
+            className={`pb-2 text-5xl   lg:text-6xl font-bold tracking-tighter ${
+              theme === "dark" ? "text-stone-400" : "text-black"
+            } mb-3`}
+          >
+            Lets talk about &nbsp;
+            <span
+              className={`${
+                theme === "dark" ? "text-[#fcea4c]" : "text-cyan-400"
+              }`}
+            >
+              everything!
+            </span>
+          </motion.h2>
+        </div>
 
-               <div className={`grid grid-cols-1 md:grid-cols-2 gap-6  ${theme === "dark" ? "bg-transparent" : "bg-transparent"}`}>
-              {/* Left Side - Image */}
-              <div className="flex justify-center items-center">
-               <img
-                   src={contactpic}
-                  alt="Description"
-                    className="rounded-lg shadow-lg object-cover w-full h-auto"
-                        />
-                       
-
-                    </div>
-
-           {/* Right Side - Input Fields */}
-             <div className="mt-12">
-          <div className="mb-6">
-           <input
-          type="text"
-           name="name"
-          id="name"
-            placeholder="Your Name"
-           value={formData.name}
-           onChange={handleChange}
-          required
-          className={`w-full px-5 p-3 outline-0 ${theme === "dark" ? "bg-white text-cyan-400" : "bg-black text-white"}`}
-          />
-    </div>
-
-    <div className="mb-6">
-      <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="Your Email"
-        value={formData.email}
-        onChange={handleChange}
-        required
-        className={`w-full px-5 p-3 outline-0 ${theme === "dark" ? "bg-white text-cyan-400" : "bg-black text-white"}`}
-      />
-    </div>
-
-    <div className="mb-6">
-      <input
-        type="text"
-        name="subject"
-        id="subject"
-        placeholder="Subject"
-        value={formData.subject}
-        onChange={handleChange}
-        required
-         className={`w-full px-5 p-3 outline-0 ${theme === "dark" ? "bg-white text-cyan-400" : "bg-black text-white"}`}
-      />
-    </div>
-
-    <div className="mb-6">
-      <textarea
-        name="message"
-        id="message"
-        placeholder="Your Message"
-        value={formData.message}
-        onChange={handleChange}
-        required
-        className={`w-full px-5 p-3 outline-0 ${theme === "dark" ? "bg-white text-cyan-400" : "bg-black text-white"}`}
-        rows="5"
-      />
-    </div>
-
-    <div className="text-center">
-      <button
-        type="submit"
-         className={`rounded cursor-pointer shadow-xl p-4  text-sm  mb-10 ${theme === "dark" ? "bg-white border-2 text-black border-[#fcea4c] " : "bg-black text-white border-2 border-cyan-400"}`}
-      >
-        Send Message
-      </button>
-    </div>
-  </div>
-</div>
-
-              </form>
-              
-            </div>
-            <hr className="border-t border-stone-900  "/>
- <div className="m-8 flex items-center justify-center gap-4 text-2xl sm:text-4xl">
-        <a
-          href="https://www.linkedin.com/in/sudhagar-m-284198283/"
-          target="_blank"
-          className={` hover:text-blue-500 active:text-blue-500 transition-colors duration-300 ${
-            theme === "dark" ? "text-white" : "text-black"
-          } `}
-        >
-          <FaLinkedin />
-        </a>
-
-        <a
-          href="https://github.com/sudhagar712"
-          target="_blank"
-          className={` ${theme === "dark" ? "text-white" : "text-black"} `}
-        >
-          <VscGithubInverted />
-        </a>
-
-        <a
-          href="https://www.instagram.com/sudhagar_msr/"
-          target="_blank"
-          className={` hover:text-pink-500 active:text-pink-500 transition-colors duration-300  ${
-            theme === "dark" ? "text-white" : "text-black"
-          }`}
-        >
-          <FaInstagram />
-        </a>
-        <a
-          href="https://wa.me/9943863916?text=Hello%20there!%20I%20have%20a%20question%20for%20you."
-          target="_blank"
-          rel="noopener noreferrer"
-          className={` hover:text-[#25D366] active:text-[#25D366] transition-colors duration-300  ${
-            theme === "dark" ? "text-white" : "text-black"
-          }`}
-        >
-          <FaWhatsapp />
-        </a>
-      </div>
-
-
-
-
-
-
-
-            
-            
-          
-
-
-            
-            
+        {/* Right Side - Form */}
+        <form ref={form} onSubmit={sendEmail} className=" space-y-6">
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-700 uppercase"
+            >
+              Full Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full mt-1 p-3 rounded-md bg-gray-200 focus:outline-none"
+              required
+            />
           </div>
 
-          <ToastContainer />
-        </div>
-      </section>
-    </>
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700 uppercase"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full mt-1 p-3 rounded-md bg-gray-200 focus:outline-none"
+              required
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-gray-700 uppercase"
+            >
+              Message
+            </label>
+            <textarea
+              name="message"
+              id="message"
+              rows="5"
+              value={formData.message}
+              onChange={handleChange}
+              className="w-full mt-1 p-3 text-black rounded-md bg-gray-200 focus:outline-none"
+              required
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            className="w-full  dark:bg-yellow-500 text-white p-3 rounded-md font-bold bg-[#24d3ee] dark:hover:bg-yellow-600 transition"
+          >
+            Send Message
+          </button>
+
+          {/* Social Icons */}
+          <div className="flex justify-center space-x-6 mt-6 text-2xl">
+            <a
+              href="https://www.linkedin.com/in/sudhagar-m-284198283/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin className="hover:text-blue-600" />
+            </a>
+            <a
+              href="https://github.com/sudhagar712"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <VscGithubInverted className="hover:text-gray-800" />
+            </a>
+            <a
+              href="https://www.instagram.com/sudhagar_msr/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="hover:text-pink-500" />
+            </a>
+            <a
+              href="https://wa.me/9943863916?text=Hello%20there!%20I%20have%20a%20question%20for%20you."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp className="hover:text-green-500" />
+            </a>
+          </div>
+        </form>
+      </div>
+      <ToastContainer />
+    </section>
   );
 };
 
