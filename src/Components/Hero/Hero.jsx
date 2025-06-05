@@ -71,7 +71,7 @@ const Hero = ({ theme }) => {
                   initial={{ x: 100, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 1, delay: 1.5 }}
-                  className={`relative md:p-2  z-10 mt-[-60px] md:mt-[10px] w-40 h-40 lg:w-[400px] lg:h-[400px] rounded-full shadow-2xl object-fit contrast-125 border-4 ${
+                  className={`relative md:p-2  z-10 mt-[-60px] md:mt-[10px] w-[200px] h-[200px] lg:w-[400px] lg:h-[400px] rounded-full shadow-2xl object-fit contrast-125 border-4 ${
                     theme === "dark" ? "border-yellow-400" : "border-cyan-400"
                   }`}
                 />
