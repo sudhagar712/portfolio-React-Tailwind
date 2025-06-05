@@ -95,7 +95,7 @@ const Hero = ({ theme }) => {
               </h3>
               <motion.h2
                 variants={ChildVariants}
-                className={`pb-2 text-3xl lg:text-7xl font-bold tracking-tighter ${
+                className={`pb-2 text-5xl lg:text-7xl font-bold tracking-tighter ${
                   theme === "dark" ? "text-stone-400" : "text-black"
                 } mb-3`}
               >
@@ -110,7 +110,7 @@ const Hero = ({ theme }) => {
               </motion.h2>
               <motion.span
                 variants={ChildVariants}
-                className="bg-gradient-to-r from-stone-300 to-stone-600 bg-clip-text text-xl lg:text-5xl tracking-light text-transparent"
+                className="bg-gradient-to-r from-stone-300 to-stone-600 bg-clip-text text-3xl lg:text-5xl tracking-light text-transparent"
               >
                 <TypeAnimation
                   sequence={[
@@ -140,7 +140,7 @@ const Hero = ({ theme }) => {
                 {HERO1_CONTENT}
               </motion.p>
 
-              <div className=" mb-[40px] flex items-center justify-center gap-4 text-2xl sm:text-5xl sm:gap-7">
+              <div className=" mb-[40px] flex items-center justify-center gap-4 text-2xl sm:text-xl sm:gap-7">
                 <a
                   href="https://www.linkedin.com/in/sudhagar-m-284198283/"
                   target="_blank"

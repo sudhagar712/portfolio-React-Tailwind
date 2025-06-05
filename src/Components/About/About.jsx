@@ -112,7 +112,7 @@ const About = ({ theme }) => {
             ))}
           </div>
           <p
-            className={`mt-6   mb-10 lg:text-md text-[10px] p-3 leading-6  ${
+            className={`mt-6   mb-10 lg:text-[14px] text-[10px] p-3 leading-6  ${
               theme === "dark" ? "text-white" : "text-stone-600"
             }`}
           >

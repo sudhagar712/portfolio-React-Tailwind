@@ -17,8 +17,8 @@ const NavMiniBar = ({ theme }) => {
   return (
     <div>
       <MdMenuOpen
-        className={`absolute shadow-xl p-2 rounded-md top-5  right-20 cursor-pointer text-4xl flex items-center  ${
-          theme === "dark" ? "text-gray-800" : "text-black"
+        className={`absolute shadow-lg p-2 rounded-md top-5  right-20 cursor-pointer text-4xl flex items-center  ${
+          theme === "dark" ? "text-white" : "text-black"
         }`}
         onClick={toggleNav}
       />
