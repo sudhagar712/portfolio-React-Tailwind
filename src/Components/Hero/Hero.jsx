@@ -140,7 +140,7 @@ const Hero = ({ theme }) => {
                 {HERO1_CONTENT}
               </motion.p>
 
-              <div className=" mb-[40px] flex items-center justify-center gap-4 text-2xl sm:text-xl sm:gap-7">
+              <div className=" mb-[40px] flex items-center justify-center gap-4 text-2xl md:text-4xl sm:gap-7">
                 <a
                   href="https://www.linkedin.com/in/sudhagar-m-284198283/"
                   target="_blank"

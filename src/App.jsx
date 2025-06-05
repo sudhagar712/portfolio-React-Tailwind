@@ -11,6 +11,8 @@ import { motion } from "framer-motion";
 import Education from "./Components/Education/Education";
 import About from "./Components/About/About";
 import NavMiniBar from "./Components/NavMini/NavMiniBar";
+import WhatsAppUp from "./Components/Whatappsup/WhatappUp";
+import BackToTop from "./Components/BAcktotop/BackToTop";
 
 
 const App = () => {
@@ -63,7 +65,7 @@ const App = () => {
                 <span className="ball-8"></span>
               </div>
               <h2 className="flex justify-center items-center h-screen font-extrabold mt-3 text-5xl">
-              𝓢
+                𝕾
               </h2>
             </div>
           </div>
@@ -114,6 +116,8 @@ const App = () => {
             <Education theme={theme} />
             <Contact theme={theme} />
             <NavMiniBar theme={theme} />
+            <WhatsAppUp />
+            <BackToTop />
           </div>
         </div>
       )}
