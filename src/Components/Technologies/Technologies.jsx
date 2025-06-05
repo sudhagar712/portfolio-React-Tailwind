@@ -56,7 +56,7 @@ const Technologies = ({ theme }) => {
       <div className=" px-10">
         <motion.h2
           variants={ChildVariants}
-          className={`pb-2 text-4xl lg:text-7xl text-center font-bold tracking-tighter ${
+          className={`pb-2 text-4xl lg:text-7xl mb-10 text-center font-bold tracking-tighter ${
             theme === "dark" ? "text-stone-400" : "text-black"
           } mb-3`}
         >
@@ -74,7 +74,7 @@ const Technologies = ({ theme }) => {
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 1.5 }}
-          className="grid grid-cols-3 md:grid-cols-12 gap-8 mt-10 text-6xl md:text-8xl justify-center  items-center"
+          className="grid grid-cols-3 md:grid-cols-6 gap-[70px] mt-10 text-6xl md:text-7xl justify-center  items-center"
         >
           {iconData.map((item, index) => (
             <motion.div

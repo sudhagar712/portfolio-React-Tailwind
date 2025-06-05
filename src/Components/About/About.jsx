@@ -76,7 +76,7 @@ const About = ({ theme }) => {
             </span>
           </motion.h2>
           <h1
-            className={` text-xl ${
+            className={` text-sm md:text-xl ${
               theme === "dark" ? "text-[#fcea4c]" : "text-stone-600"
             }`}
           >

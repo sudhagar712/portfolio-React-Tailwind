@@ -41,7 +41,7 @@ const ChildVariants = {
 
 const Hero = ({ theme }) => {
   return (
-    <section id="home" className="lg:min-h-screen  flex items-center">
+    <section id="home" className="min-h-screen   flex items-center">
       <div className="pb-5">
         <div className="flex flex-wrap">
           <div className="w-full  p-10  lg:w-1/2">
