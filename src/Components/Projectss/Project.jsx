@@ -15,12 +15,12 @@ const CardVariants = {
 const Project = ({ theme }) => {
   return (
     <section id="project" className="lg:min-h-screen">
-      <div className="px-3  py-20 md:px-20">
+      <div className="px-2  py-20 md:px-20">
         <motion.h2
           initial="hidden"
           whileInView="visible"
           variants={CardVariants}
-          className={`text-4xl text-center lg:text-6xl font-bold tracking-tight mb-12 ${
+          className={`text-4xl text-center lg:text-5xl font-bold tracking-tight mb-10 ${
             theme === "dark" ? "text-stone-300" : "text-gray-800"
           }`}
         >
@@ -34,7 +34,7 @@ const Project = ({ theme }) => {
           </span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-5">
           {PROJECTS.map((project, index) => (
             <motion.div
               key={index}
@@ -48,7 +48,7 @@ const Project = ({ theme }) => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-[300px] object-fit"
+                className="w-full  h-[300px] object-fit"
               />
 
               {/* Overlay content */}

@@ -1,7 +1,12 @@
 import project1 from "../assets/projects/bridalscreenshot.png";
 import project2 from "../assets/projects/wedding.png";
 import project3 from "../assets/projects/elearn.png";
-import project4 from "../assets/projects/project-4.webp";
+import project4 from "../assets/projects/user1.png";
+import project5 from "../assets/projects/ecom.png";
+import project6 from "../assets/projects/pixalive1.png";
+import project7 from "../assets/projects/pixalive2.png";
+import project8 from "../assets/projects/pixalive3.png";
+import project9 from "../assets/projects/portfolio.png";
 
 export const HERO1_CONTENT = `I am a Web Developer, Designer and Content Creator. I have rich experience in Frontend and Backend Development.`;
 
@@ -62,33 +67,74 @@ export const PROJECTS = [
   {
     title: "Bridal Studio UniSex Saloon & Spa",
     image: project1,
-    description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
+   
     technologies: ["HTML", "CSS", "ReactJS", "Tailwindcss"],
     link: "https://www.lafusionbridal.com/"
   },
   {
     title: "Wedding PhotoShop Studio",
     image: project2,
-    description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
+   
     technologies: ["HTML", "CSS", "Reactjs", "TailwindCss"],
     link: "https://wedding-photography-chennai.netlify.app/"
   },
   {
+    title: "Personal Portfolio",
+    image: project9,
+   
+    technologies: ["ReactJS", "TailwindCss"],
+    link: "https://sudhagarportfolio.vercel.app/"
+  },
+  {
+    title: "Pixalive Tech Offical Website",
+    image: project6,
+    description:
+      "Pixalive is pioneering live streaming and digital innovation for the future of business.",
+    technologies: ["ReactJS", "TailwindCss", "Nodejs", "ExpressJs", "MongoDB"],
+    link: "https://app.pixalivetech.com/"
+  },
+  {
+    title: "Pixalive -CoWorks",
+    image: project7,
+    description:
+      "Whether you're a freelancer, a startup, or a remote team, we've built the perfect workspace around you. Modern desks, fast internet, and ready-to-use laptops.",
+    technologies: ["ReactJS", "TailwindCss", "Nodejs", "ExpressJs", "MongoDB"],
+    link: "https://www.co-works.pixalivetech.com/"
+  },
+  {
+    title: "Pixalive Gold Network",
+    image: project8,
+    description: "Secure Your Future with India’s First Social Gold Network.",
+    technologies: ["ReactJS", "TailwindCss", "Nodejs", "ExpressJs", "MongoDB"],
+    link: "https://gold.pixalivenetwork.com/"
+  },
+  {
+    title: "Ecommerce App Platform",
+    image: project5,
+   
+    technologies: [
+      "ReactJS",
+      "TailwindCss",
+      "ContextApi",
+      "Nodejs",
+      "ExpressJs",
+      "MongoDB"
+    ],
+    link: "https://ecom2project.netlify.app/"
+  },
+  {
     title: "E-learning Website Static",
     image: project3,
-    description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
+    
     technologies: ["HTML", "CSS", "React", "TailwindCss"],
     link: "https://sudhagar-elearning-platform.netlify.app/"
   },
   {
-    title: "Blogging Platform",
+    title: "User Management - CRUD",
     image: project4,
-    description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"]
+   
+    technologies: ["ReactJS", "TailwindCss", "ReduxToolkit", "JsonServer"],
+    link: "https://reduxtoolkit-series.vercel.app/"
   }
 ];
 

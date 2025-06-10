@@ -86,7 +86,7 @@ const Contact = ({ theme }) => {
   };
 
   return (
-    <section id="contact" className="lg:min-h-screen py-5 p-6 ">
+    <section id="contact" className="lg:min-h-screen py-5 p-6 mb-[20px] ">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Left Side */}
         <div>
