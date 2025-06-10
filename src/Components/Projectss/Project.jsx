@@ -1,83 +1,83 @@
-import React from 'react'
-import { PROJECTS } from '../../constants'
+import React from "react";
+import { PROJECTS } from "../../constants";
 import { motion } from "framer-motion";
+import { FiExternalLink } from "react-icons/fi";
 
-
-
-const ContainerVariants = {
-  hidden: {
-    opacity: 0,
-    x: -100,
-  },
-  visible: {
+const CardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i) => ({
     opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.5,
-      staggerChildren: 0.5,
-    },
-  },
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.2 }
+  })
 };
 
-const ChildVariants = {
-  hidden: {
-    opacity: 0,
-    x: -100,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
-
-
-
-const Project = ({theme}) => {
+const Project = ({ theme }) => {
   return (
-    <section id="project" className="lg:min-h-screen ">
-      <div className="pb-4 px-8 mt-[70px] md:px-[60px]  ">
+    <section id="project" className="lg:min-h-screen">
+      <div className="px-3  py-20 md:px-20">
         <motion.h2
-          variants={ChildVariants}
-          className={`pb-2 text-4xl text-center mb-[70px] lg:text-7xl font-bold tracking-tighter ${
-            theme === "dark" ? "text-stone-400" : "text-black"
-          } mb-3`}
+          initial="hidden"
+          whileInView="visible"
+          variants={CardVariants}
+          className={`text-4xl text-center lg:text-6xl font-bold tracking-tight mb-12 ${
+            theme === "dark" ? "text-stone-300" : "text-gray-800"
+          }`}
         >
-          MY
+          MY{" "}
           <span
             className={`${
-              theme === "dark" ? "text-[#fcea4c]" : "text-cyan-400"
+              theme === "dark" ? "text-[#fcea4c]" : "text-cyan-500"
             }`}
           >
             PROJECT
           </span>
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
           {PROJECTS.map((project, index) => (
             <motion.div
               key={index}
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 40 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="rounded-lg shadow-lg p-4"
+              custom={index}
+              variants={CardVariants}
+              initial="hidden"
+              whileInView="visible"
+              className="relative group bg-white dark:bg-stone-800 shadow-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.03]"
             >
+              {/* Image */}
               <img
                 src={project.image}
-                alt="project"
-                className="w-full h-[200px] object-cover rounded mb-4"
+                alt={project.title}
+                className="w-full h-[300px] object-fit"
               />
-              <h3 className="mb-2 font-semibold text-xl">{project.title}</h3>
-              <p className="mb-4 text-stone-400">{project.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="bg-stone-900 text-stone-300 px-3 py-1 text-sm rounded-full"
+
+              {/* Overlay content */}
+              <div className="absolute inset-0 bg-black/70 backdrop-blur-sm text-white p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-center items-center text-center">
+                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                <p className="text-sm mb-4">{project.description}</p>
+                <div className="flex flex-wrap justify-center gap-2 mb-4">
+                  {project.technologies.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="bg-white/10 px-3 py-1 rounded-full text-xs border border-white/20"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Link Icon */}
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 text-white hover:text-cyan-400 transition"
+                    title="View Project"
                   >
-                    {tech}
-                  </span>
-                ))}
+                    <FiExternalLink className="text-2xl" />
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
@@ -85,6 +85,6 @@ const Project = ({theme}) => {
       </div>
     </section>
   );
-}
+};
 
-export default Project
+export default Project;
